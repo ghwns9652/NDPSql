@@ -6,4 +6,5 @@
 	url = git://github.com/cambridgehackers/buildcache
 [submodule "platform/build_tools/connectal"]
 	path = platform/build_tools/connectal
-	url = https://github.com/xushuotao/connectal.git
+	url = https://github.com/ghwns9652/connectal.git
+    branch = buse
