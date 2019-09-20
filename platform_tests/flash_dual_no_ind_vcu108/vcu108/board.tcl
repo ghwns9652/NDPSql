@@ -1,0 +1,37 @@
+
+set partname {xcvu095-ffva2104-2-e}
+set boardname {vcu108}
+## for compatibility with older fpgamake. will be removed.
+set xbsvipdir {/home/chamdoo/NDPSql/platform/build_tools/connectal/out}
+set ipdir {/home/chamdoo/NDPSql/platform/build_tools/connectal/out}
+set connectaldir {/home/chamdoo/NDPSql/platform/build_tools/connectal}
+set need_pcie {xu_gen3x8}
+set connectal_dut {mkPcieTop}
+set IMPORT_HOSTIF {}
+set XILINX_SYS_CLK {}
+set DataBusWidth {256}
+set USE_WIDE_WIDTH {}
+set ConnectalVersion {18.08.1}
+set NumberOfMasters {1}
+set PinType {Top_Pins}
+set PinTypeInclude {FlashTop}
+set NumberOfUserTiles {1}
+set SlaveDataBusWidth {32}
+set SlaveControlAddrWidth {5}
+set BurstLenSize {10}
+set project_dir {$(DTOP)}
+set MainClockPeriod {8}
+set DerivedClockPeriod {9.091000}
+set PcieClockPeriod {4}
+set XILINX {1}
+set VirtexUltrascale {}
+set XilinxUltrascale {}
+set PCIE {}
+set PCIE3 {}
+set PcieHostInterface {}
+set PhysAddrWidth {40}
+set NUMBER_OF_LEDS {2}
+set PcieLanes {8}
+set CONNECTAL_BITS_DEPENDENCES {hw/mkTop.bit}
+set CONNECTAL_RUN_SCRIPT {$(CONNECTALDIR)/scripts/run.pcietest}
+set BOARD_vcu108 {}

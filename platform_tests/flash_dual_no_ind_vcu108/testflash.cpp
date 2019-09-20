@@ -352,17 +352,17 @@ void *check_read_buffer_done(void *ptr){
 
 int main(int argc, const char **argv){
   DEBUG_PRINT( "Main Start\n");
-  device = new FlashRequestProxy(IfcNames_FlashRequestS2H);
-  FlashIndication testIndication(IfcNames_FlashIndicationH2S);
+  device = new FlashRequestProxy(IfcNames_FlashRequestS2H); //connectal initialization
+  FlashIndication testIndication(IfcNames_FlashIndicationH2S); //connectal callback initialization
 
-  DmaManager *dma = platformInit();
+  DmaManager *dma = platformInit(); //MMU, dma, etc initialization
 
   DEBUG_PRINT( "Main::allocating memory...\n");
 
-  srcAlloc = portalAlloc(srcAlloc_sz, 0);
-  dstAlloc = portalAlloc(dstAlloc_sz, 0);
+  srcAlloc = portalAlloc(srcAlloc_sz, 0); //src fd allocation
+  dstAlloc = portalAlloc(dstAlloc_sz, 0); //dst fd allocation
 
-  srcBuffer = (unsigned int *)portalMmap(srcAlloc, srcAlloc_sz);
+  srcBuffer = (unsigned int *)portalMmap(srcAlloc, srcAlloc_sz); //mmap
   dstBuffer = (unsigned int *)portalMmap(dstAlloc, dstAlloc_sz);
 
   portalCacheFlush(srcAlloc, srcBuffer, srcAlloc_sz, 1);
@@ -384,7 +384,7 @@ int main(int argc, const char **argv){
   device->setDmaReadRef(ref_srcAlloc);
   device->setDmaWriteRef(ref_dstAlloc);
 
-  for (int t = 0; t < NUM_TAGS; t++) {
+  for (int t = 0; t < NUM_TAGS; t++) { //allocate buffer address for each tag
     readTagTable[t].busy = false;
     writeTagTable[t].busy = false;
     int byteOffset = t * PAGE_SIZE;

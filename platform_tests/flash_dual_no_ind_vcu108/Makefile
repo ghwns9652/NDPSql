@@ -20,7 +20,7 @@ CONNECTALFLAGS += --bscflags="-D BSIM -D SIM_DMA_WRITE_LATENCY=1"
 endif
 
 BSVFILES = FlashTop.bsv
-CPPFILES = testflash.cpp
+CPPFILES = vcu108_inf.cpp
 
 ifeq ($(BOARD), vcu108)
 
